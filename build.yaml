@@ -6,6 +6,7 @@
 # `artifact-name` to assign a name to distinguish build outputs from each other:
 #
 ---
+include:
   # --- LEFT (Central) ---
   # Gets the display, the HID adapter, and ZMK Studio.
   - board: corne_choc_pro_left
