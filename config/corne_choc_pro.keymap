@@ -11,6 +11,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
+#include <dt-bindings/zmk/rgb.h>
 
 / {
     combos {
@@ -58,16 +59,16 @@
 
         default_layer {
             // -----------------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  E  |  R  |  T  |  MUTE |  PP   |  Y  |  U   |  I  |  O  |  P  | BSPC |
-            // | CTRL |  A  |  S  |  D  |  F  |  G  |  LALT |  RALT |  H  |  J   |  K  |  L  |  ;  |  '   |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |               |  N  |  M   |  ,  |  .  |  /  | ESC  |
+            // |  TAB |  B  |  U  |  .  |  ,  |  G  |  MUTE |  PP   |  M  |  L   |  F  |  D  |  W  | BSPC |
+            // | CTRL |  H  |  I  |  E  |  A  |  O  |  LALT |  RALT |  T  |  N   |  R  |  S  |  P  |  =   |
+            // | SHFT |  K  |  X  |  C  |  V  |  Z  |               |  Y  |  J   |  Q  |  ;  |  /  | RALT |
             //                    | GUI | LWR | SPC |               | ENT | RSE  | ALT |
 
             bindings = <
-&kp LMETA  &kp Q               &kp W        &kp E      &kp R      &kp T      &trans  &trans  &kp Y      &mt LEFT_BRACKET U  &kp I            &mt SEMICOLON O  &kp P     &kp BACKSPACE
-&kp LCTRL  &mt SINGLE_QUOTE A  &mt MINUS S  &kp D      &kp F      &kp G      &trans  &trans  &kp H      &kp J               &kp K            &kp L            &kp SEMI  &kp EQUAL
-&sk LSHFT  &kp Z               &kp X        &kp C      &kp V      &kp B                      &kp N      &kp M               &kp COMMA        &kp DOT          &kp FSLH  &kp RIGHT_ALT
-                                            &kp LCTRL  &kp SPACE  &lt 4 TAB                  &lt 3 RET  &lt 2 BACKSPACE     &sk RIGHT_SHIFT
+&kp LMETA  &kp B  &mt LEFT_BRACKET U  &kp DOT    &kp COMMA           &kp G            &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &kp M      &kp L            &kp F            &kp D        &kp W     &kp BACKSPACE
+&kp LCTRL  &kp H  &kp I               &kp E      &mt SINGLE_QUOTE A  &mt SEMICOLON O  &trans          &trans           &kp T      &kp N            &kp R            &mt MINUS S  &kp P     &kp EQUAL
+&sk LSHFT  &kp K  &kp X               &kp C      &kp V               &kp Z                                             &kp Y      &kp J            &kp Q            &kp SEMI     &kp FSLH  &kp RIGHT_ALT
+                                      &kp LCTRL  &kp SPACE           &lt 4 TAB                                         &lt 3 RET  &lt 2 BACKSPACE  &sk RIGHT_SHIFT
             >;
 
             sensor-bindings =
