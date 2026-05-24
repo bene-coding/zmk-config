@@ -64,10 +64,10 @@
             //                    | GUI | LWR | SPC |               | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESC         &kp Q   &kp K  &kp O      &kp U        &kp Y     &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &kp V  &kp D        &kp C  &kp L  &kp F   &kp J
-&sl 1           &kp H   &kp A  &kp E      &kp I        &kp APOS  &trans          &trans           &kp G  &kp T        &kp R  &kp N  &kp S   &sl 1
-&sk LEFT_SHIFT  &trans  &kp Z  &kp COMMA  &kp DOT      &kp X                                      &kp B  &kp P        &kp M  &kp W  &trans  &sk RIGHT_SHIFT
-                               &mo 3      &lt 2 SPACE  &mo 4                                      &mo 4  &lt 2 SPACE  &mo 3
+&kp ESC         &kp Q   &kp K            &kp O               &kp U          &kp Y     &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &kp V  &kp D        &kp C            &kp L             &kp F   &kp J
+&sl 1           &kp H   &kp A            &kp E               &kp I          &kp APOS  &trans          &trans           &kp G  &kp T        &kp R            &kp N             &kp S   &sl 1
+&sk LEFT_SHIFT  &trans  &mt LEFT_META Z  &mt LEFT_ALT COMMA  &mt LCTRL DOT  &kp X                                      &kp B  &mt RCTRL P  &mt RIGHT_ALT M  &mt RIGHT_META W  &trans  &sk RIGHT_SHIFT
+                                         &mo 3               &lt 2 SPACE    &mo 4                                      &mo 4  &lt 2 SPACE  &mo 3
             >;
 
             sensor-bindings =
