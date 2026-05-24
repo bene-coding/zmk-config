@@ -17,39 +17,51 @@
     combos { compatible = "zmk,combos"; };
 
     macros {
-        mc_oe: mc_oe {
+        mc_EUR: mc_EUR {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT &kp DQT &kp O>;
-            label = "MC_OE";
+            bindings = <&kp RA(N5)>;
+            label = "MC_EUR";
         };
 
-        mc_ue: mc_ue {
+        mc_DRM: mc_DRM {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT &kp DQT &kp U>;
-            label = "MC_UE";
+            bindings = <&kp RA(LS(L))>;
+            label = "MC_DRM";
         };
 
-        mc_ae: mc_ae {
+        mc_MU: mc_MUE {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT &kp DQT &kp A>;
-            label = "MC_AE";
+            bindings = <&kp RA(M)>;
+            label = "MC_MUE";
         };
 
-        mc_ee: mc_ee {
+        mc_CIRC: mc_CIRC {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT &kp DQT &kp E>;
-            label = "MC_EE";
+            bindings = <&kp RA(LS(SEMI))>;
+            label = "MC_CIRC";
         };
 
-        mc_ie: mc_ie {
+        mc_PARA: mc_PARA {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&kp LEFT_SHIFT &kp DQT &kp I>;
-            label = "MC_IE";
+            bindings = <&kp RA(LS(S))>;
+            label = "MC_PARA";
+        };
+    };
+
+    behaviors {
+        hsl: hsl {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HSL";
+            bindings = <&kp>, <&sl>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            flavor = "balanced";
         };
     };
 
@@ -64,10 +76,10 @@
             //                    | GUI | LWR | SPC |               | ENT | RSE  | ALT |
 
             bindings = <
-&kp ESC         &kp Q   &kp K            &kp O               &kp U          &kp Y     &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &kp V  &kp D        &kp C            &kp L             &kp F   &kp J
-&sl 1           &kp H   &kp A            &kp E               &kp I          &kp APOS  &trans          &trans           &kp G  &kp T        &kp R            &kp N             &kp S   &sl 1
-&sk LEFT_SHIFT  &trans  &mt LEFT_META Z  &mt LEFT_ALT COMMA  &mt LCTRL DOT  &kp X                                      &kp B  &mt RCTRL P  &mt RIGHT_ALT M  &mt RIGHT_META W  &trans  &sk RIGHT_SHIFT
-                                         &mo 3               &lt 2 SPACE    &mo 4                                      &mo 4  &lt 2 SPACE  &mo 3
+&kp ESC    &kp B  &kp U        &kp COMMA       &kp DOT         &kp Z      &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &kp P          &kp C           &kp L            &kp M        &kp F     &kp DEL
+&kp LSHFT  &kp H  &kp A        &kp E           &kp I           &kp O      &none           &none            &kp D          &kp T           &kp R            &kp N        &kp S     &kp RIGHT_SHIFT
+&sl 4      &kp K  &mt LCTRL Y  &mt LEFT_WIN X  &mt LEFT_ALT Q  &kp J                                       &kp RIGHT_ALT  &mt LEFT_ALT G  &mt RIGHT_WIN W  &mt RCTRL V  &kp APOS  &sl 4
+                               &sl 1           &lt 2 SPACE     &lt 3 TAB                                   &lt 3 ENTER    &lt 2 SPACE     &sl 1
             >;
 
             sensor-bindings =
@@ -79,37 +91,37 @@
 
         symbol_layer {
             bindings = <
-&kp ESC  &caps_word  &kp AT  &mc_oe          &mc_ue           &kp RA(LS(SEMICOLON))  &trans  &trans  &kp BACKSLASH  &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp APOS   &kp GRAVE  &kp RA(COMMA)
-&trans   &kp RA(M)   &mc_ae  &mc_ee          &mc_ie           &kp RA(S)              &trans  &trans  &kp SLASH      &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp EQUAL  &kp MINUS  &kp STAR
-&trans   &trans      &trans  &kp LEFT_BRACE  &kp RIGHT_BRACE  &kp RA(N5)                             &kp PIPE       &kp EXCL              &kp QUESTION           &kp PLUS   &kp UNDER  &trans
-                             &trans          &kp SPACE        &trans                                 &trans         &kp SPACE             &trans
+&kp ESC         &kp PERCENT  &kp HASH   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &mc_CIRC  &trans  &trans  &kp BACKSLASH  &kp GT           &kp LT          &kp COLON  &kp CARET  &kp DELETE
+&kp LEFT_SHIFT  &kp EQUAL    &kp EXCL   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp AT    &trans  &trans  &kp SLASH      &kp RIGHT_BRACE  &kp LEFT_BRACE  &kp MINUS  &mc_DRM    &kp RIGHT_SHIFT
+&mc_PARA        &kp PLUS     &kp QMARK  &kp AMPS              &kp STAR               &mc_EUR                   &kp PIPE       &mc_MU           &kp DOLLAR      &kp UNDER  &kp GRAVE  &kp TILDE
+                                        &none                 &kp SPACE              &kp TAB                   &kp ENTER      &kp SPACE        &none
             >;
         };
 
         nav_layer {
             bindings = <
-&kp K_REDO      &kp K_FIND  &kp LC(W)   &kp LC(T)    &kp LC(LS(TAB))  &kp LC(TAB)    &trans  &trans  &kp ENTER   &kp K_MENU    &kp PG_DN     &kp PG_UP  &kp INSERT     &trans
-&kp K_UNDO      &trans      &kp K_COPY  &kp LA(TAB)  &kp K_PASTE      &kp K_CUT      &trans  &trans  &kp BSPC    &kp LEFT      &kp UP_ARROW  &kp DOWN   &kp RIGHT      &kp LC(BACKSPACE)
-&sk LEFT_SHIFT  &trans      &kp LC(A)   &kp TAB      &kp K_BACK       &kp K_FORWARD                  &kp DELETE  &kp LC(LEFT)  &kp HOME      &kp END    &kp LC(RIGHT)  &sk RIGHT_SHIFT
-                                        &trans       &kp ESCAPE       &trans                         &trans      &kp ESC       &trans
+&kp K_FIND      &kp K_REDO  &kp LC(W)   &kp LC(T)    &kp LC(LS(TAB))  &kp LC(TAB)    &trans  &trans  &kp BACKSPACE      &kp K_MENU    &kp PG_DN     &kp PG_UP  &kp INSERT     &kp DEL
+&kp LEFT_SHIFT  &kp K_UNDO  &kp K_COPY  &kp LA(TAB)  &kp K_PASTE      &kp K_CUT      &trans  &trans  &kp ENTER          &kp LEFT      &kp UP_ARROW  &kp DOWN   &kp RIGHT      &kp RIGHT_SHIFT
+&kp LCTRL       &none       &kp LC(A)   &kp TAB      &kp K_BACK       &kp K_FORWARD                  &kp LC(BACKSPACE)  &kp LC(LEFT)  &kp HOME      &kp END    &kp LC(RIGHT)  &sk LC(DELETE)
+                                        &trans       &trans           &trans                         &trans             &trans        &trans
             >;
         };
 
         number_layer {
             bindings = <
-&kp ESC         &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F11  &kp F12  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &studio_unlock
-&trans          &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &trans   &trans   &kp N6  &kp N7  &kp N8  &kp N9  &kp N0   &trans
-&sk LEFT_SHIFT  &trans  &trans  &trans  &trans  &trans                    &trans  &trans  &trans  &trans  &trans   &sk RIGHT_SHIFT
-                                &trans  &trans  &trans                    &trans  &trans  &trans
+&kp ESC  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F11  &kp F12  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &studio_unlock
+&none    &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &trans   &trans   &kp N6  &kp N7  &kp N8  &kp N9  &kp N0   &none
+&none    &none   &none   &none   &none   &none                     &none   &none   &none   &none   &none    &none
+                         &none   &none   &none                     &none   &none   &none
             >;
         };
 
         utils_layer {
             bindings = <
-&bootloader  &none           &none         &none             &none         &none         &trans  &trans  &none     &mkp MB1        &mkp MB2      &mkp MB3        &none            &studio_unlock
-&none        &kp C_PREVIOUS  &kp C_MUTE    &kp C_PLAY_PAUSE  &kp C_NEXT    &none         &trans  &trans  &none     &mmv MOVE_LEFT  &mmv MOVE_UP  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none
-&bt BT_CLR   &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4                  &none     &mkp MB4        &msc SCRL_UP  &msc SCRL_DOWN  &mkp MB5         &none
-                                           &none             &none         &none                         &mkp MB1  &mkp MB2        &none
+&bootloader  &none           &none         &none             &none         &none         &trans  &trans  &none   &mkp MB1        &mkp MB3      &mkp MB2        &none            &studio_unlock
+&bt BT_CLR   &kp C_PREVIOUS  &kp C_MUTE    &kp C_PLAY_PAUSE  &kp C_NEXT    &none         &trans  &trans  &none   &mmv MOVE_LEFT  &mmv MOVE_UP  &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &none
+&none        &bt BT_SEL 0    &bt BT_SEL 1  &bt BT_SEL 2      &bt BT_SEL 3  &bt BT_SEL 4                  &none   &mkp MB4        &msc SCRL_UP  &msc SCRL_DOWN  &mkp MB5         &none
+                                           &trans            &trans        &trans                        &trans  &trans          &trans
             >;
         };
     };
