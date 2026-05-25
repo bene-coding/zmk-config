@@ -63,23 +63,26 @@
             tapping-term-ms = <200>;
             flavor = "balanced";
         };
+
+        mm_shift: mm_shift {
+            compatible = "zmk,behavior-mod-morph";
+            label = "MM_SHIFT";
+            bindings = <&none>, <&none>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
     };
 
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  B  |  U  |  .  |  ,  |  G  |  MUTE |  PP   |  M  |  L   |  F  |  D  |  W  | BSPC |
-            // | CTRL |  H  |  I  |  E  |  A  |  O  |  LALT |  RALT |  T  |  N   |  R  |  S  |  P  |  =   |
-            // | SHFT |  K  |  X  |  C  |  V  |  Z  |               |  Y  |  J   |  Q  |  ;  |  /  | RALT |
-            //                    | GUI | LWR | SPC |               | ENT | RSE  | ALT |
-
             bindings = <
-&kp ESC    &kp B  &kp U        &mt SEMI COMMA  &mt COLON DOT   &kp Z      &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &kp P          &kp C           &kp L            &kp M        &kp F     &kp DEL
+&kp ESC    &kp B  &kp U        &kp COMMA       &kp DOT         &kp Z      &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &kp P          &kp C           &kp L            &kp M        &kp F     &kp DEL
 &kp LSHFT  &kp H  &kp A        &kp E           &kp I           &kp O      &none           &none            &kp D          &kp T           &kp R            &kp N        &kp S     &kp RIGHT_SHIFT
 &sl 4      &kp K  &mt LCTRL Y  &mt LEFT_WIN X  &mt LEFT_ALT Q  &kp J                                       &kp RIGHT_ALT  &mt LEFT_ALT G  &mt RIGHT_WIN W  &mt RCTRL V  &kp APOS  &sl 4
-                               &sl 1           &lt 2 SPACE     &lt 3 TAB                                   &lt 3 ENTER    &lt 2 SPACE     &sl 1
+                               &sl 2           &lt 1 SPACE     &lt 3 TAB                                   &lt 3 ENTER    &lt 1 SPACE     &sl 2
             >;
 
             sensor-bindings =
@@ -91,8 +94,8 @@
 
         symbol_layer {
             bindings = <
-&kp ESC         &kp PERCENT  &kp HASH   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &mc_CIRC  &trans  &trans  &kp BACKSLASH  &kp GT           &kp LT          &kp COLON  &kp CARET  &kp DELETE
-&kp LEFT_SHIFT  &kp EQUAL    &kp EXCL   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp AT    &trans  &trans  &kp SLASH      &kp RIGHT_BRACE  &kp LEFT_BRACE  &kp MINUS  &mc_DRM    &kp RIGHT_SHIFT
+&kp ESC         &kp PERCENT  &kp HASH   &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &mc_CIRC  &trans  &trans  &kp BACKSLASH  &kp GT           &kp LT          &kp COLON  &kp CARET  &kp DELETE
+&kp LEFT_SHIFT  &kp EQUAL    &kp EXCL   &kp LEFT_BRACKET      &kp RIGHT_BRACKET      &kp AT    &trans  &trans  &kp SLASH      &kp RIGHT_BRACE  &kp LEFT_BRACE  &kp MINUS  &mc_DRM    &kp RIGHT_SHIFT
 &mc_PARA        &kp PLUS     &kp QMARK  &kp AMPS              &kp STAR               &mc_EUR                   &kp PIPE       &mc_MU           &kp DOLLAR      &kp UNDER  &kp GRAVE  &kp TILDE
                                         &none                 &kp SPACE              &kp TAB                   &kp ENTER      &kp SPACE        &none
             >;
@@ -109,10 +112,10 @@
 
         number_layer {
             bindings = <
-&kp ESC  &kp F1  &kp F2  &kp F3  &kp F4  &kp F5  &kp F11  &kp F12  &kp F6  &kp F7  &kp F8  &kp F9  &kp F10  &studio_unlock
-&none    &kp N1  &kp N2  &kp N3  &kp N4  &kp N5  &trans   &trans   &kp N6  &kp N7  &kp N8  &kp N9  &kp N0   &none
-&none    &none   &none   &none   &none   &none                     &none   &none   &none   &none   &none    &none
-                         &none   &none   &none                     &none   &none   &none
+&kp ESC     &kp N7  &kp N8  &kp N9  &kp N0     &none    &none   &none   &none      &mt F7 KP_N7  &mt F8 KP_N8  &mt F9 KP_N9  &none  &kp DEL
+&kp LSHIFT  &kp N4  &kp N5  &kp N6  &none      &none    &trans  &trans  &none      &mt F4 KP_N4  &mt F5 KP_N5  &mt F6 KP_N6  &none  &kp RSHIFT
+&none       &kp N1  &kp N2  &kp N3  &none      &none                    &kp RALT   &mt F1 KP_N1  &mt F2 KP_N2  &mt F3 KP_N3  &none  &none
+                            &none   &kp SPACE  &kp TAB                  &kp ENTER  &kp SPACE     &kp KP_N0
             >;
         };
 
@@ -126,5 +129,12 @@
         };
     };
 
-    conditional_layers { compatible = "zmk,conditional-layers"; };
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        cond_fnum {
+            if-layers = <3>;
+            then-layer = <5>;
+        };
+    };
 };
