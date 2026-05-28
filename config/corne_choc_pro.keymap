@@ -79,10 +79,10 @@
 
         default_layer {
             bindings = <
-&kp ESC    &kp B  &kp U        &kp COMMA       &kp DOT         &kp Z      &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &kp P          &kp C           &kp L            &kp M        &kp F     &kp DEL
-&kp LSHFT  &kp H  &kp A        &kp E           &kp I           &kp O      &none           &none            &kp D          &kp T           &kp R            &kp N        &kp S     &kp RIGHT_SHIFT
-&sl 4      &kp K  &mt LCTRL Y  &mt LEFT_WIN X  &mt LEFT_ALT Q  &kp J                                       &kp RIGHT_ALT  &mt LEFT_ALT G  &mt RIGHT_WIN W  &mt RCTRL V  &kp APOS  &sl 4
-                               &sl 2           &lt 1 SPACE     &lt 3 TAB                                   &lt 3 ENTER    &lt 1 SPACE     &sl 2
+&kp ESC                            &kp B             &kp U        &mt SEMI COMMA  &mt COLON DOT   &kp Z      &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &kp P          &kp C           &kp L           &kp M        &kp F              &kp DEL
+&mt LEFT_BRACKET LEFT_PARENTHESIS  &mt LEFT_SHIFT H  &mt LCTRL A  &mt LEFT_WIN E  &mt LEFT_ALT I  &kp O      &none           &none            &kp D          &mt LEFT_ALT T  &mt LEFT_WIN N  &mt RCTRL R  &mt RIGHT_SHIFT S  &mt RIGHT_BRACKET RIGHT_PARENTHESIS
+&sl 4                              &kp K             &kp Y        &kp X           &kp Q           &kp J                                       &kp RIGHT_ALT  &kp G           &kp W           &kp V        &kp APOS           &sl 4
+                                                                  &sl 2           &lt 1 SPACE     &lt 3 TAB                                   &lt 3 ENTER    &lt 1 SPACE     &sl 2
             >;
 
             sensor-bindings =
@@ -103,19 +103,19 @@
 
         nav_layer {
             bindings = <
-&kp K_FIND      &kp K_REDO  &kp LC(W)   &kp LC(T)    &kp LC(LS(TAB))  &kp LC(TAB)    &trans  &trans  &kp BACKSPACE      &kp K_MENU    &kp PG_DN     &kp PG_UP  &kp INSERT     &kp DEL
-&kp LEFT_SHIFT  &kp K_UNDO  &kp K_COPY  &kp LA(TAB)  &kp K_PASTE      &kp K_CUT      &trans  &trans  &kp ENTER          &kp LEFT      &kp UP_ARROW  &kp DOWN   &kp RIGHT      &kp RIGHT_SHIFT
-&kp LCTRL       &none       &kp LC(A)   &kp TAB      &kp K_BACK       &kp K_FORWARD                  &kp LC(BACKSPACE)  &kp LC(LEFT)  &kp HOME      &kp END    &kp LC(RIGHT)  &sk LC(DELETE)
-                                        &trans       &trans           &trans                         &trans             &trans        &trans
+&kp LC(F)  &kp LC(Y)  &kp LC(W)  &kp LC(T)    &kp LC(LS(TAB))  &kp LC(TAB)    &trans  &trans  &kp BACKSPACE      &kp K_MENU    &kp PG_DN     &kp PG_UP  &kp INSERT     &kp DEL
+&none      &kp LC(Z)  &kp LC(C)  &kp LA(TAB)  &kp LC(V)        &kp LC(X)      &trans  &trans  &kp ENTER          &kp LEFT      &kp UP_ARROW  &kp DOWN   &kp RIGHT      &kp RIGHT_SHIFT
+&kp LCTRL  &none      &kp LC(A)  &kp TAB      &kp K_BACK       &kp K_FORWARD                  &kp LC(BACKSPACE)  &kp LC(LEFT)  &kp HOME      &kp END    &kp LC(RIGHT)  &sk LC(DELETE)
+                                 &trans       &trans           &trans                         &trans             &trans        &trans
             >;
         };
 
         number_layer {
             bindings = <
-&kp ESC     &kp N7  &kp N8  &kp N9  &kp N0     &none    &none   &none   &none      &mt F7 KP_N7  &mt F8 KP_N8  &mt F9 KP_N9  &none  &kp DEL
-&kp LSHIFT  &kp N4  &kp N5  &kp N6  &none      &none    &trans  &trans  &none      &mt F4 KP_N4  &mt F5 KP_N5  &mt F6 KP_N6  &none  &kp RSHIFT
-&none       &kp N1  &kp N2  &kp N3  &none      &none                    &kp RALT   &mt F1 KP_N1  &mt F2 KP_N2  &mt F3 KP_N3  &none  &none
-                            &none   &kp SPACE  &kp TAB                  &kp ENTER  &kp SPACE     &kp KP_N0
+&kp ESC  &mt LBKT LEFT_PARENTHESIS  &kp N7  &kp N8     &kp N9  &mt RBKT RIGHT_PARENTHESIS  &none   &none   &none     &none         &none           &none      &none       &kp DEL
+&none    &kp SEMI                   &kp N4  &kp N5     &kp N6  &kp EQUAL                   &trans  &trans  &none     &kp LEFT_ALT  &kp RIGHT_META  &kp RCTRL  &kp RSHIFT  &none
+&none    &kp BSLH                   &kp N1  &kp N2     &kp N3  &kp MINUS                                   &kp RALT  &none         &none           &none      &none       &none
+                                            &kp COMMA  &kp N0  &kp DOT                                     &none     &none         &none
             >;
         };
 
