@@ -60,10 +60,10 @@
 
         default_layer {
             bindings = <
-&kp ESC                            &kp B             &kp U        &mt SEMI COMMA  &mt COLON DOT   &kp Z      &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &kp P          &kp C           &kp L           &kp M        &kp F              &kp DEL
-&mt LEFT_BRACKET LEFT_PARENTHESIS  &mt LEFT_SHIFT H  &mt LCTRL A  &mt LEFT_WIN E  &mt LEFT_ALT I  &kp O      &none           &none            &kp D          &mt LEFT_ALT T  &mt LEFT_WIN N  &mt RCTRL R  &mt RIGHT_SHIFT S  &mt RIGHT_BRACKET RIGHT_PARENTHESIS
-&sl 4                              &kp K             &kp Y        &kp X           &kp Q           &kp J                                       &kp RIGHT_ALT  &kp G           &kp W           &kp V        &kp APOS           &sl 4
-                                                                  &sl 2           &lt 1 SPACE     &lt 3 TAB                                   &lt 3 ENTER    &lt 1 SPACE     &sl 2
+&kp ESC             &kp B        &kp U           &mt SEMI COMMA          &mt COLON DOT  &kp Z      &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &kp P          &kp C        &kp L                    &kp M            &kp F        &kp DEL
+&kp LEFT_SHIFT      &mt LCTRL H  &mt LEFT_GUI A  &mt LEFT_ALT E          &kp I          &kp O      &none           &none            &kp D          &kp T        &mt LEFT_ALT N           &mt RIGHT_WIN R  &mt RCTRL S  &kp RIGHT_SHIFT
+&lt 4 LEFT_BRACKET  &kp K        &kp Y           &kp X                   &kp Q          &kp J                                       &kp RIGHT_ALT  &kp G        &kp W                    &kp V            &kp APOS     &lt 4 RIGHT_BRACKET
+                                                 &lt 2 LEFT_PARENTHESIS  &lt 1 SPACE    &lt 3 TAB                                   &lt 3 ENTER    &lt 1 SPACE  &lt 2 RIGHT_PARENTHESIS
             >;
 
             sensor-bindings =
