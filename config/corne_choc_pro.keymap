@@ -16,7 +16,14 @@
 &mt { flavor = "tap-preferred"; };
 
 / {
-    combos { compatible = "zmk,combos"; };
+    combos {
+        compatible = "zmk,combos";
+
+        BKSPC {
+            bindings = <&kp BACKSPACE>;
+            key-positions = <23 24>;
+        };
+    };
 
     macros {
         mc_EUR: mc_EUR {
@@ -60,10 +67,10 @@
 
         default_layer {
             bindings = <
-&kp ESC             &kp B        &kp U           &mt SEMI COMMA          &mt COLON DOT  &kp Z      &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &kp P          &kp C        &kp L                    &kp M            &kp F        &kp DEL
-&kp LEFT_SHIFT      &mt LCTRL H  &mt LEFT_GUI A  &mt LEFT_ALT E          &kp I          &kp O      &none           &none            &kp D          &kp T        &mt LEFT_ALT N           &mt RIGHT_WIN R  &mt RCTRL S  &kp RIGHT_SHIFT
-&lt 4 LEFT_BRACKET  &kp K        &kp Y           &kp X                   &kp Q          &kp J                                       &kp RIGHT_ALT  &kp G        &kp W                    &kp V            &kp APOS     &lt 4 RIGHT_BRACKET
-                                                 &lt 2 LEFT_PARENTHESIS  &lt 1 SPACE    &lt 3 TAB                                   &lt 3 ENTER    &lt 1 SPACE  &lt 2 RIGHT_PARENTHESIS
+&kp ESC             &kp B  &kp U        &mt SEMI COMMA          &mt COLON DOT   &kp Z      &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &kp P          &kp C           &kp L                    &kp M        &kp F     &kp DEL
+&kp LEFT_SHIFT      &kp H  &kp A        &kp E                   &kp I           &kp O      &none           &none            &kp D          &kp T           &kp N                    &kp R        &kp S     &kp RIGHT_SHIFT
+&lt 4 LEFT_BRACKET  &kp K  &mt LCTRL Y  &mt LEFT_GUI X          &mt LEFT_ALT Q  &kp J                                       &kp RIGHT_ALT  &mt LEFT_ALT G  &mt LEFT_GUI W           &mt RCTRL V  &kp APOS  &lt 4 RIGHT_BRACKET
+                                        &lt 2 LEFT_PARENTHESIS  &lt 1 SPACE     &lt 3 TAB                                   &lt 3 ENTER    &lt 1 SPACE     &lt 2 RIGHT_PARENTHESIS
             >;
 
             sensor-bindings =
