@@ -13,6 +13,8 @@
 #include <dt-bindings/zmk/pointing.h>
 #include <dt-bindings/zmk/rgb.h>
 
+&mt { flavor = "tap-preferred"; };
+
 / {
     combos { compatible = "zmk,combos"; };
 
@@ -50,27 +52,6 @@
             #binding-cells = <0>;
             bindings = <&kp RA(LS(S))>;
             label = "MC_PARA";
-        };
-    };
-
-    behaviors {
-        hsl: hsl {
-            compatible = "zmk,behavior-hold-tap";
-            label = "HSL";
-            bindings = <&kp>, <&sl>;
-
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            flavor = "balanced";
-        };
-
-        mm_shift: mm_shift {
-            compatible = "zmk,behavior-mod-morph";
-            label = "MM_SHIFT";
-            bindings = <&none>, <&none>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT)>;
         };
     };
 
@@ -129,12 +110,5 @@
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        cond_fnum {
-            if-layers = <3>;
-            then-layer = <5>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
