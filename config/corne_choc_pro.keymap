@@ -67,9 +67,9 @@
 
         default_layer {
             bindings = <
-&kp ESC             &kp X  &kp B        &mt SEMI COMMA          &mt COLON DOT   &kp O      &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &kp K          &kp C           &kp L                    &kp M        &kp F     &kp DEL
-&kp LEFT_SHIFT      &kp A  &kp H        &kp E                   &kp I           &kp U      &none           &none            &kp D          &kp T           &kp N                    &kp R        &kp S     &kp RIGHT_SHIFT
-&lt 4 LEFT_BRACKET  &kp Z  &mt LCTRL P  &mt LEFT_GUI Y          &mt LEFT_ALT Q  &kp J                                       &kp RIGHT_ALT  &mt LEFT_ALT G  &mt LEFT_GUI W           &mt RCTRL V  &kp APOS  &lt 4 RIGHT_BRACKET
+&kp ESC             &kp V  &kp D        &mt SEMI COMMA          &mt COLON DOT   &kp O      &rgb_ug RGB_ON  &rgb_ug RGB_OFF  &kp P          &kp K           &kp L                    &kp C        &kp F     &kp DEL
+&kp LEFT_SHIFT      &kp A  &kp H        &kp E                   &kp I           &kp U      &none           &none            &kp X          &kp T           &kp N                    &kp R        &kp S     &kp RIGHT_SHIFT
+&lt 4 LEFT_BRACKET  &kp Z  &mt LCTRL B  &mt LEFT_GUI Y          &mt LEFT_ALT Q  &kp J                                       &kp RIGHT_ALT  &mt LEFT_ALT G  &mt LEFT_GUI W           &mt RCTRL M  &kp APOS  &lt 4 RIGHT_BRACKET
                                         &lt 2 LEFT_PARENTHESIS  &lt 1 SPACE     &lt 3 TAB                                   &lt 3 ENTER    &lt 1 SPACE     &lt 2 RIGHT_PARENTHESIS
             >;
 
